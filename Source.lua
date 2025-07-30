@@ -89,4 +89,3 @@ print('CyAPI has succesfully been retrieved - https://github.com/cyerc/CyAPI') -
 ----------------------------------- EOF -----------------------------------
 
 return CyAPI;
-]=])()
