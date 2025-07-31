@@ -56,7 +56,7 @@ This will reconstruct all the code in the same correct order you added your code
 Here is a code snippet you can copy and paste to test out for yourself.
 ```lua
 ----------------------------------- Testing -----------------------------------
-local CyFrame = loadstring(game:HttpGet("https://raw.githubusercontent.com/cyerc/CyFrame/refs/heads/main/Source.lua"))()
+local CyFrame = loadstring(game:HttpGet("https://raw.githubusercontent.com/cyerc/CyFrame/main/Source.lua"))()
 
 task.wait(1)
 CyFrame.Functions.AddRunCode("RenderStepped", "HiRun", function()
