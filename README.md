@@ -15,7 +15,7 @@ local CyAPI = loadstring(game:HttpGet("https://raw.githubusercontent.com/cyerc/C
 
 ## Functions
 
-The API Will provided you with 3 functions
+The API Will provide you with 3 functions
 
 ```lua
 CyAPI.Functions.AddRunCode(Argument, Name, NewFunction)
