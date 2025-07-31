@@ -29,49 +29,52 @@ local CyAPI = {
 ----------------------------------- Functions -----------------------------------
 
 CyAPI.Functions.AddRunCode = function(Argument, Name, NewFunction)
-    if not CyAPI.Run[Argument] then
-        warn('CyAPI | Construction Error. - Invalid #1 argument provided.')
+    local RunArgument = CyAPI.Run[Argument]
+    if not RunArgument then
+        warn('CyAPI | Construction Error. - Invalid #1 argument provided, "'..Argument..'" does not exist.')
         return
-    elseif CyAPI.Run[Argument].Table[Name] then
+    elseif RunArgument.Table[Name] then
         warn('CyAPI | Construction Warning. - Function with name "'..Name..'" already exists. Function will be overwritten.')
     end
 
-    local OldRunCode = CyAPI.Run[Argument].Function
-    CyAPI.Run[Argument].Function = function()
+    local OldRunCode = RunArgument.Function
+    RunArgument.Function = function()
         NewFunction()
         OldRunCode()
     end
-    CyAPI.Run[Argument].Table[Name] = NewFunction
+    RunArgument.Table[Name] = NewFunction
 end
 
 CyAPI.Functions.ReconstructRunCode = function(Argument)
-    if not CyAPI.Run[Argument] then
-        warn('CyAPI | Reconstruction Failure. - Invalid #1 argument provided.')
+    local RunArgument = CyAPI.Run[Argument]
+    if not RunArgument then
+        warn('CyAPI | Reconstruction Error. - Invalid #1 argument provided, "'..Argument..'" does not exist.')
         return
     end
 
-    local TempTable = table.clone(CyAPI.Run[Argument].Table)
-    table.clear(CyAPI.Run[Argument].Table)
-    CyAPI.Run[Argument].Function = function() end
+    local TempTable = table.clone(RunArgument.Table)
+    table.clear(RunArgument.Table)
+    RunArgument.Function = function() end
     for Name, NewFunction in pairs(TempTable) do
-        local OldRunCode = CyAPI.Run[Argument].Function
-        CyAPI.Run[Argument].Function = function()
+        local OldRunCode = RunArgument.Function
+        RunArgument.Function = function()
             NewFunction()
             OldRunCode()
         end
-        CyAPI.Run[Argument].Table[Name] = NewFunction
+        RunArgument.Table[Name] = NewFunction
     end
 end
 
 CyAPI.Functions.RemoveRunCode = function(Argument, Name)
-    if not CyAPI.Run[Argument] then
-        warn('CyAPI | Removal Error. - Invalid #1 argument provided.')
+    local RunArgument = CyAPI.Run[Argument]
+    if not RunArgument then
+        warn('CyAPI | Removal Error. - Invalid #1 argument provided, "'..Argument..'" does not exist.')
         return
-    elseif not CyAPI.Run[Argument].Table[Name] then
+    elseif not RunArgument.Table[Name] then
         warn('CyAPI | Removal Warning. - Function with name "'.. Name ..'" not found.')
     end
 
-    CyAPI.Run[Argument].Table[Name] = nil
+    RunArgument.Table[Name] = nil
     CyAPI.Functions.ReconstructRunCode(Argument)
 end
 
