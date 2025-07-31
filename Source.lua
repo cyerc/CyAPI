@@ -1,7 +1,7 @@
 ----------------------------------- Introduction -----------------------------------
 
 --[[
-    This API has been made by Cyerc. Full source code can be found at https://github.com/cyerc/CyFrame
+    This Framework has been made by Cyerc. Full source code can be found at https://github.com/cyerc/CyFrame
 ]]
 
 ----------------------------------- Services -----------------------------------
