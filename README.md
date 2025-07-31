@@ -3,9 +3,9 @@
 CyFrame is a lightweight utility framework that provides an easy way to manage `RenderStepped` and `Heartbeat` callbacks in Roblox.  
 It helps you keep your code clean, organized, and optimized by avoiding scattered connections, which can heavily affect performance.
 
-I originally created this API for personal use, but decided to release it on GitHub in case others find it useful.
+I originally created this Framework for personal use, but decided to release it on GitHub in case others find it useful.
 
-## How to use the API:
+## How to use the Framework:
 
 Copy and paste this code at the top of your script, that's it.
 
@@ -15,7 +15,7 @@ local CyFrame = loadstring(game:HttpGet("https://raw.githubusercontent.com/cyerc
 
 ## Functions
 
-The API Will provide you with 3 functions
+The Framework Will provide you with 3 functions
 
 ```lua
 CyFrame.Functions.AddRunCode(Argument, Name, NewFunction)
