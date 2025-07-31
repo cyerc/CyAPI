@@ -10,7 +10,7 @@ I originally created this API for personal use, but decided to release it on Git
 Copy and paste this code at the top of your script, that's it.
 
 ```lua
-local CyAPI = loadstring(game:HttpGet("https://raw.githubusercontent.com/cyerc/CyAPI/refs/heads/main/Source.lua"))() 
+local CyAPI = loadstring(game:HttpGet("https://raw.githubusercontent.com/cyerc/CyAPI/main/Source.lua"))() 
 ```
 
 ## Functions
