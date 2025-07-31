@@ -31,7 +31,7 @@ You will mainly be using the `AddRunCode` function, and the `RemoveRunCode` func
 
 ## Examples
 
-To add code to a renderstepped loop, you will need the AddRunCode function. Here is an example:
+To add code to a `RenderStepped` loop, you will need the `AddRunCode` function. Here is an example:
 ```lua
 CyAPI.Functions.AddRunCode("RenderStepped", "ExampleName", function()
   print("Hello world!")
