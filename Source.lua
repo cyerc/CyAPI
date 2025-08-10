@@ -4,10 +4,6 @@
     This Framework has been made by Cyerc. Full source code can be found at https://github.com/cyerc/CyFrame
 ]]
 
------------------------------------ Services -----------------------------------
-
-local RunService = game:GetService("RunService")
-
 ----------------------------------- Initialize -----------------------------------
 
 local CyFrame = {
@@ -25,6 +21,12 @@ local CyFrame = {
     },
     Functions = {}
 }
+
+cloneref = cloneref or function(...) return ... end
+
+----------------------------------- Services -----------------------------------
+
+local RunService = cloneref(game:GetService("RunService"))
 
 ----------------------------------- Functions -----------------------------------
 
@@ -76,6 +78,15 @@ CyFrame.Functions.RemoveRunCode = function(Argument, Name)
 
     RunArgument.Table[Name] = nil
     CyFrame.Functions.ReconstructRunCode(Argument)
+end
+
+CyFrame.Functions.GetRunCode = function(Argument, Name)
+    local RunArgument = CyFrame.Run[Argument]
+    if not RunArgument then
+        warn('CyFrame | Retrieval Error. - Invalid #1 argument provided, "'..Argument..'" does not exist.')
+    end
+
+    return RunArgument.Table[Name] or false
 end
 
 ----------------------------------- Connections -----------------------------------
