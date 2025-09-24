@@ -15,13 +15,10 @@ local CyFrame = loadstring(game:HttpGet("https://raw.githubusercontent.com/cyerc
 
 ## Functions
 
-The Framework Will provide you with 3 functions
+The Framework Will provide you with 2 functions
 
 ```lua
 CyFrame.Functions.AddRunCode(Argument, Name, NewFunction)
-```
-```lua
-CyFrame.Functions.ReconstructRunCode(Argument)
 ```
 ```lua
 CyFrame.Functions.RemoveRunCode(Argument, Name)
@@ -44,12 +41,6 @@ If you at a later point want this to be removed, you can do this like so:
 CyFrame.Functions.RemoveRunCode("Heartbeat", "ExampleName")
 ```
 Now the code has been removed. 
-
-If you for some reason want to reconstruct all the code within the `Heartbeat` loop, you can do that like so:
-```lua
-CyFrame.Functions.ReconstructRunCode("Heartbeat")
-```
-This will reconstruct all the code in the same correct order you added your code. 
 
 ## Testing
 
